@@ -1,0 +1,345 @@
+html.page-sendding, body.page-sendding {
+	overflow-y: hidden !important;
+}
+
+:root {
+	--nabu-sticky-top: 100px;
+}
+/* Sticky latéral pour la colonne droite, sans modifier la hauteur ni overflow */
+.side-fixed {
+	position: sticky;
+	top: var(--nabu-sticky-top, 100px);
+}
+
+/* Sticky sidebar (desktop uniquement) */
+@media (min-width: 992px) {
+	.sticky-lg {
+		position: sticky;
+		top: var(--nabu-sticky-top, 100px);
+		align-self: flex-start;
+	}
+
+	/* Autorise le header sticky du tableau principal */
+	#tableau-paquet-conteneur.table-responsive {
+		overflow-x: visible;
+	}
+}
+
+html, body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+input[type="number"] {
+	text-align: center;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+#tableau-paquet .form-control[type="number"]::-webkit-inner-spin-button, 
+#tableau-paquet .form-control[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+#tableau-paquet .form-control[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+.corpus-select, .select2-container--default .select2-selection--single {
+	width: 100% !important;
+	font-size: 1em !important;
+	padding: 8px 16px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	text-align: center !important;
+}
+
+.corpus-select option {
+	text-align: center !important;
+	direction: ltr !important;
+}
+
+/* Icône d'édition affichée uniquement au survol des options (Select2) */
+.select2-results__option .corpus-edit-icon {
+	opacity: 0;
+	transition: opacity 120ms ease-in-out;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+.select2-results__option:hover .corpus-edit-icon {
+	opacity: 1;
+}
+
+.dataTables_paginate {
+    margin-top: 10px !important;
+}
+
+/* Styles pour Sendding */
+.page-sendding {
+	background-color: var(--bs-body-bg);
+	min-height: 100vh;
+}
+
+.cines-panel {
+	border: 1px solid var(--bs-border-color);
+	border-radius: var(--bs-border-radius-lg);
+	background-color: var(--bs-body-bg);
+	padding: 1rem;
+}
+
+.cines-panel__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.cines-panel__meta {
+	border-top: 1px solid var(--bs-border-color);
+	padding-top: 0.75rem;
+}
+
+.cines-code {
+	font-family: var(--bs-font-monospace);
+	font-size: 0.875em;
+}
+
+.cines-pre {
+	white-space: pre-wrap;
+	word-break: break-word;
+	background-color: var(--bs-tertiary-bg);
+	border: 1px solid var(--bs-border-color);
+	border-radius: var(--bs-border-radius);
+	padding: 0.75rem;
+}
+
+.border-dashed {
+	border-style: dashed !important;
+}
+
+#dropZone {
+	transition: all 0.3s ease;
+	border-color: var(--bs-border-color) !important;
+	background-color: var(--bs-tertiary-bg) !important;
+	cursor: pointer;
+}
+
+#dropZone:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--bs-box-shadow-sm);
+}
+
+.progress {
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: var(--bs-box-shadow-inset);
+}
+
+.progress-bar {
+	transition: width 0.3s ease;
+}
+
+@keyframes pulse {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.5; }
+}
+
+.uploading-animation {
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+}
+
+.sendding-container {
+	min-height: 100vh;
+	overflow-y: auto;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.sendding-card {
+	max-width: 600px;
+	background-color: var(--bs-body-bg);
+}
+
+.drop-zone-hover {
+	border-color: var(--bs-primary-border-subtle, var(--bs-primary)) !important;
+	background-color: var(--bs-primary-bg-subtle, var(--bs-tertiary-bg)) !important;
+}
+
+.progress-sm {
+	height: 8px;
+}
+
+.paquet-modal-overlay {
+	display: block;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2000;
+}
+
+.modal-dialog-center {
+	max-width: 500px;
+	width: 100%;
+}
+
+/* Modales création / édition paquet (harmonisées) */
+.paquet-modal-dialog {
+	max-width: 760px;
+	width: calc(100% - 2rem);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paquet-modal-content {
+	border-radius: var(--bs-border-radius-lg);
+	border: 1px solid var(--bs-border-color);
+}
+
+.paquet-modal-header {
+	border-bottom: 0;
+	padding-bottom: 0.5rem;
+}
+
+.paquet-modal-body {
+	padding-top: 0.25rem;
+}
+
+.paquet-modal-flags {
+	background-color: var(--bs-tertiary-bg);
+	border: 1px solid var(--bs-border-color);
+	border-radius: var(--bs-border-radius);
+	padding: 0.75rem;
+}
+
+.paquet-modal-actions .btn {
+	min-width: 160px;
+}
+
+/* Mini tableaux (sidebar) */
+.paquet-mini-item {
+	cursor: pointer;
+	user-select: none;
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* Mini cartes centrées (évite l'effet "plein écran" sur mobile) */
+.paquet-mini-card {
+	max-width: 420px;
+}
+
+.paquet-mini-item--todo {
+	background-color: var(--bs-primary-bg-subtle);
+	border: 1px solid var(--bs-primary-border-subtle);
+}
+
+.paquet-mini-item--error {
+	background-color: var(--bs-warning-bg-subtle);
+	border: 1px solid var(--bs-warning-border-subtle);
+}
+
+.paquet-mini-item:hover {
+	box-shadow: var(--bs-box-shadow-sm);
+}
+
+.paquet-mini-item:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Page Login */
+html.page-login,
+body.page-login {
+	overflow: hidden;
+	height: 100vh;
+}
+
+.login-shell {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem;
+	background-color: var(--bs-tertiary-bg);
+}
+
+.login-card {
+	width: 100%;
+	max-width: 520px;
+	border-radius: var(--bs-border-radius-lg);
+	background-color: var(--bs-body-bg);
+	border-color: var(--bs-border-color);
+	padding: 2rem;
+}
+
+@media (max-width: 575.98px) {
+	.login-card {
+		padding: 1.5rem;
+	}
+}
+
+.login-header {
+	text-align: center;
+}
+
+.login-logo {
+	width: 120px;
+	height: 120px;
+	object-fit: contain;
+	display: inline-block;
+	margin-bottom: 0.75rem;
+}
+
+.login-title {
+	font-family: 'Cormorant Garamond', serif;
+}
+
+/* Typo de marque (navbar, titres courts) */
+.nabu-title {
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.nabu-subtitle {
+	letter-spacing: 0.5px;
+}
+
+.login-subtitle {
+	font-weight: 600;
+}
+
+
