@@ -44,7 +44,7 @@ Backend Nabu est une API PHP qui permet de gérer des utilisateurs, des paquets 
 - PHP 8.0 ou supérieur
 - MySQL/MariaDB
 - Composer
-- un accès à l'API VITAM SCDI TO CINES
+- un accès à l'API VITAM SCDItoCINES
 
 ###  Installation
 - Installer les dépendances du backend avec composer (composer.json)
