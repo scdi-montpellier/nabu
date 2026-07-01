@@ -5,6 +5,8 @@ Application de gestion de paquets d'archivage pour la production numérique du S
  - Historisation des envois
  - Accès multi-utilisateurs avec rôle
  - import en masse d'une liste de paquets (via un CSV)
+ 
+ Cette application est à l'origine un projet de stage au SCDI de : [https://github.com/Lasdepic](https://github.com/Lasdepic)
 
 # Frontend Nabu
 
@@ -18,7 +20,7 @@ Application de gestion de paquets d'archivage pour la production numérique du S
 
 ##  Installation
 - Cloner le repo sur un serveur web
-- Modifier [/src/APIA/config/config.js](config.js) pour spécifier le nom de l'application, logo, l'url... dans l'interface
+- Modifier [/src/APIA/config/config.js](/src/APIA/config/config.js) pour spécifier le nom de l'application, logo, l'url... dans l'interface
 - Le documentroot du serveur web doit être le dossier du frontend_nabu et il faut créer un alias sur le dossier backend_nabu
 
 # Backend Nabu
