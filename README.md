@@ -1,5 +1,5 @@
 # NABU - Numérisation Archivage Bibliothèque Universitaire
-Application de gestion de paquets d'archivage pour la production numérique du SCDI et envoi de ces paquets à la plateforme d'archivage du CINES (VITAM)
+Application de gestion de paquets d'archivage pour la production numérique du SCDI de Montpellier et envoi de ces paquets à la plateforme d'archivage du CINES (VITAM)
  - Gestion des paquets (ajout, modification, suppression) et des statuts du paquet (envoi ok, en erreur...)
  - Tris par attributs, filtres par statuts...
  - Historisation des envois
@@ -7,6 +7,8 @@ Application de gestion de paquets d'archivage pour la production numérique du S
  - import en masse d'une liste de paquets (via un CSV)
  
  Cette application est à l'origine un projet de stage au SCDI de : [https://github.com/Lasdepic](https://github.com/Lasdepic)
+ 
+ Cette application n'a pas vocation a être installé ailleurs qu'au SCDI de Montpellier notamment car elle est dépendante d'une API REST propriétaire (SCDItoCINES) qui permet de faire le pont avec l'API VITAM du CINES.
 
 # Frontend Nabu
 
