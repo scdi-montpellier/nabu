@@ -116,9 +116,15 @@ export async function mettreAJourStatutPaquet(nomFichier, statut, autoCreate = f
     const paquet = result.data;
     paquet.statusId = statut;
     paquet.statut = statut; // SLP 30/06/2026 : ne sert à rien ? statut est inexistant dans la classe paquet (backend) ?
-    // SLP 30/06/2026 si ENVOI_OK alors on décoche sip dans sip_en_attente
+    // SLP 30/06/2026 
+	// si ENVOI_OK alors 
+	// on décoche "sip dans sip_en_attente"
+	// on décoche "A faire"
 	if (statut == 3) // si statut est ENVOI_OK
+	{
+		paquet.toDo = 0;
 		paquet.filedSip = 0;
+	}
 	
 	if (modulePaquet?.editPaquet) {
       const resEdit = await modulePaquet.editPaquet(paquet);
